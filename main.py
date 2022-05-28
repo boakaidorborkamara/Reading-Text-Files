@@ -6,15 +6,35 @@
 def read_file_content(filename):
     # [assignment] Add your code here 
     with open(filename, 'r') as f:
-        file_contents = f.read()
-        print(file_contents)
+        file_content = f.read()
+        # print(file_content)
     
-    return "Hello World"
+    return file_content
 
-read_file_content("story.txt")
 
 def count_words():
     text = read_file_content("./story.txt")
+    
     # [assignment] Add your code here
+    results = {}
+    counter = 0
+
+    # convert to list 
+    text = text.split()
+  
+    # count unique words 
+    for word in text:
+        # check if current word is already in the results dictionary 
+        if word not in results:
+            counter = text.count(word)
+            results[word]=counter
+        
+        
+    print(results)
+   
+
+
 
     return {"as": 10, "would": 20}
+
+count_words()
