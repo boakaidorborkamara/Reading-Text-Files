@@ -24,8 +24,9 @@ def count_words():
   
     # count unique words 
     for word in text:
-        # check if current word is already in the results dictionary 
+        # check if current word is not in the results dictionary 
         if word not in results:
+            # count the number of times the word appear 
             counter = text.count(word)
             results[word]=counter
         
@@ -35,6 +36,6 @@ def count_words():
 
 
 
-    return {"as": 10, "would": 20}
+    return results
 
 count_words()
